@@ -46,7 +46,7 @@ class LeNet(nn.Module):
         return logits
 
 
-class graybox(object):
+class whitebox(object):
 
     def __init__(self, args):
         self.args = args
@@ -105,9 +105,9 @@ class graybox(object):
 
 def main(args):
     ensure_dir(args.results_dir)
-    gbx = graybox(args)
+    wbx = whitebox(args)
 
-    total_accu, defense_aacu, adv, gt, reform = gbx.eval_()
+    total_accu, defense_aacu, adv, gt, reform = wbx.eval_()
     _save_image(args.results_dir, adv, 'adv')
     _save_image(args.results_dir, gt, 'gt')
     _save_image(args.results_dir, reform, 'reform')
