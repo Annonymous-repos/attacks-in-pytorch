@@ -52,7 +52,7 @@ class graybox(object):
         self.args = args
 
         # setup data_loader instances
-        self.data_loader = get_mnist_test_loader(16, shuffle=False)
+        self.data_loader = get_mnist_test_loader(100, shuffle=False)
 
         # setup device
         self.device = torch.device('cuda:' + args.device)
