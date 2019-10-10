@@ -119,7 +119,7 @@ if __name__ == '__main__':
                         help='output dictionary')
 
     parser.add_argument('--device', default='0', type=str,
-                        help='output dictionary')
+                        help='device')
 
     args = parser.parse_args()
 
