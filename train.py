@@ -61,7 +61,7 @@ def main(args):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='PyTorch Template')
     parser.add_argument('-d', '--device', default='0', type=str,
-                        help='config file path (default: None)')
+                        help='the device used for computing (gpu is required)')
 
     args = parser.parse_args()
 

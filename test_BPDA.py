@@ -67,10 +67,10 @@ class whitebox(object):
         self.oracle.load_state_dict(torch.load(args.resume_oracle))
         self.oracle.eval()
 
-        self.adversary = BPDAattack(self.oracle, self.defense, self.device, epsilon=0.3,
+        self.adversary = BPDAattack(self.oracle, self.defense, self.device,
+                                    epsilon=0.3,
                                     learning_rate=0.5,
-                                    max_iterations=100,
-                                    )
+                                    max_iterations=100)
 
     def eval_(self):
         """
@@ -119,7 +119,7 @@ if __name__ == '__main__':
                         help='output dictionary')
 
     parser.add_argument('--device', default='0', type=str,
-                        help='device')
+                        help='the device used for computing (gpu is required)')
 
     args = parser.parse_args()
 
