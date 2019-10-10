@@ -6,12 +6,6 @@ from attacks import BPDAattack
 from util import _save_image, ensure_dir, accu
 from advertorch.defenses import MedianSmoothing2D, BitSqueezing, JPEGFilter
 from torchvision import transforms
-
-
-def get_instance(module, name, config, *args):
-    return getattr(module, config[name]['type'])(*args, **config[name]['args'])
-
-
 import torchvision.datasets as datasets
 
 MNIST_PATH = 'data/'
